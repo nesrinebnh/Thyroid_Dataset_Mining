@@ -1,4 +1,4 @@
-package FXML;
+package Controllers;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -9,15 +9,19 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Vector;
 
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class DashbordController implements Initializable {
 
@@ -67,6 +71,15 @@ public class DashbordController implements Initializable {
 
    private ObservableList<Attribute> attributeData;
    private ObservableList<Attribute> statData;
+
+   @FXML
+   private Button dashbord;
+
+   @FXML
+   private Button statistic;
+
+   @FXML
+   private Button about;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -129,6 +142,50 @@ public class DashbordController implements Initializable {
 		mediane.setCellValueFactory(cellData -> cellData.getValue().medianeProperty());
 		table2.setItems(statData);
 
+	}
+
+	@FXML
+	public void aboutAction(){
+		Stage rootStage = new Stage();
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(this.getClass().getResource("/FXML/about.fxml"));
+		Parent roote;
+		try {
+			roote = loader.load();
+			AboutController control = loader.getController();
+			Scene scene = new Scene(roote);
+			rootStage.setScene(scene);
+		    rootStage.show();
+		    rootStage.setResizable(false);
+		    dashbord.getScene().getWindow().hide();
+
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	public void statAction(){
+		Stage rootStage = new Stage();
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(this.getClass().getResource("/FXML/static.fxml"));
+		Parent roote;
+		try {
+			roote = loader.load();
+			StaticController control = loader.getController();
+			Scene scene = new Scene(roote);
+			rootStage.setScene(scene);
+		    rootStage.show();
+		    rootStage.setResizable(false);
+		    dashbord.getScene().getWindow().hide();
+
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

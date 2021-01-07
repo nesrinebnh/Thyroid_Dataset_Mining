@@ -13,13 +13,29 @@
     -fx-effect: dropshadow(three-pass-box, rgba(47, 64, 77,.4), 15.63, 0.24, 0, 7)
 }
 
-#title:readonly {
+#title2 {
+	-fx-font-family:'Sprayvetica' !important;
+	-fx-font-size: 1.5em;
+    -fx-background-color: linear-gradient(#2f404d 0%, #07afc9 100%) !important;
+    -fx-text-fill: white;
+    -fx-accent: transparent !important;
+    -fx-effect: dropshadow(three-pass-box, rgba(47, 64, 77,.4), 15.63, 0.24, 0, 7)
+}
+
+#title:readonly, #title2:readonly {
     -fx-background-color: transparent;
 }
 
 #box{
 	-fx-background-color: white;
 	-fx-effect: dropshadow(three-pass-box, rgba(47, 64, 77,.4), 5, 0, 3, 0)
+}
+
+
+
+.choice-box .context-menu {
+    -fx-background-color: linear-gradient(#2f404d 0%, #07afc9 100%) !important;
+    -fx-border-radius: 10 10 10 10;
 }
 
 .button{
@@ -30,6 +46,23 @@
     -fx-accent: transparent !important;
 	-fx-effect: dropshadow(three-pass-box, rgba(47, 64, 77,.4), 15.63, 0.24, 0, 7)
 }
+
+#click{
+	-fx-font-family:'Gloria Hallelujah' !important;
+	-fx-font-size: 1.2em;
+    -fx-background-color: #2f404d !important;
+    -fx-text-fill: white;
+-fx-effect: none;
+}
+
+
+
+.button:hover{
+	-fx-border-style: hidden hidden solid hidden;
+    -fx-border-width: 1;
+	-fx-border-color: #ffa800;
+}
+
 
 /*.table-cell {
 	-fx-text-fill:black;
