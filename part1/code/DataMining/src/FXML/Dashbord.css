@@ -31,11 +31,24 @@
 	-fx-effect: dropshadow(three-pass-box, rgba(47, 64, 77,.4), 5, 0, 3, 0)
 }
 
-
-
-.choice-box .context-menu {
+#infos{
+	-fx-font-family:'Gloria Hallelujah' !important;
+	-fx-font-size: 1.5em;
     -fx-background-color: linear-gradient(#2f404d 0%, #07afc9 100%) !important;
-    -fx-border-radius: 10 10 10 10;
+    -fx-text-fill: white;
+    -fx-accent: transparent !important;
+    -fx-effect: none;
+}
+
+.combo-box, .choice-box{
+    -fx-background-color:linear-gradient(#2f404d 0%, #07afc9 100%);
+    -fx-text-fill: white;
+}
+
+
+.combo-box .context-menu, .choice-box .context-menu {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black!important;
 }
 
 .button{
@@ -113,7 +126,7 @@
 
 .table-view > .virtual-flow > .scroll-bar:vertical,
 .table-view > .virtual-flow > .scroll-bar:vertical > .track,
-.table-view > .virtual-flow > .scroll-bar:vertical > .track-background, 
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
 .table-view > .virtual-flow > .scroll-bar:horizontal,
 .table-view > .virtual-flow > .scroll-bar:horizontal > .track,
 .table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
@@ -122,7 +135,7 @@
 
 
 
-.table-view > .virtual-flow > .scroll-bar > .increment-button, 
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
 .table-view > .virtual-flow > .scroll-bar > .decrement-button {
     -fx-opacity: 0;
 }

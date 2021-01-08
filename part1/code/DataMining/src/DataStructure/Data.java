@@ -16,7 +16,7 @@ public class Data {
     public static String TYS = "tys";
     public static String DTSH = "dtsh";
 
-    public static String PATH = "src/Tyro_test.txt";
+    public static String PATH = "./src/FXML/Tyro_test.txt";
     private ArrayList<Thyroid> dataset;
     private int lenght;
 
@@ -25,10 +25,11 @@ public class Data {
 
         dataset = readFile(path);
         lenght = dataset.size();
+
     }
 
     public Data() {
-        dataset = readFile(PATH);
+        dataset = readFile(this.getClass().getResource("/FXML/Thyroid_Dataset.txt").getPath());
         lenght = dataset.size();
 
     }

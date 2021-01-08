@@ -6,9 +6,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Vector;
 
+import DataStructure.Data;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -69,6 +72,9 @@ public class DashbordController implements Initializable {
    @FXML
    private TableColumn<Attribute, String> mediane;
 
+   @FXML
+   private TableColumn<Attribute, String> mean;
+
    private ObservableList<Attribute> attributeData;
    private ObservableList<Attribute> statData;
 
@@ -81,9 +87,25 @@ public class DashbordController implements Initializable {
    @FXML
    private Button about;
 
+   String PATH = "";
+
+   Data data ;
+
+
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+
+
+	}
+
+	public void setPath(String path){
+	   System.out.println("something is wrong");
+		this.PATH = path;
+		System.out.println(PATH);
+		data= new Data(PATH);
+
 		attributeData = FXCollections.observableArrayList();
 		statData = FXCollections.observableArrayList();
 		title.setEditable(false);
@@ -96,7 +118,8 @@ public class DashbordController implements Initializable {
 
 		BufferedReader txtReader;
 		try {
-			txtReader = new BufferedReader(new FileReader("src/FXML/Thyroid_Dataset.txt"));
+
+			txtReader = new BufferedReader(new FileReader(PATH));
 			String row;
 			try {
 				while ((row = txtReader.readLine()) != null) {
@@ -131,8 +154,27 @@ public class DashbordController implements Initializable {
 		System.out.println(this.attributeData.size());
 		table.setItems(attributeData);
 
-		for(int i=1; i<=5;i++){
-			statData.add(new Attribute(String.valueOf(i), "25.5", "35", "117", "15"));
+
+
+		List<String> names = Arrays.asList("t3","tri","tsh","tys","dtsh");
+
+
+		for(int i=0; i<5;i++){
+			ArrayList<Float> modei = data.mode(names.get(i));
+			String modes = "";
+			for (int j=0; j<modei.size(); j++){
+				modes = String. format("%.2f",modei.get(j))+" ";
+			}
+
+
+			//statData.add(new Attribute("",names.get(i), String. format("%.2f", data.Min(names.get(i))), String. format("%.2f", data.Max(names.get(i))), modes, String. format("%.2f", data.median(names.get(i)), String. format("%.2f", data.mean(names.get(i))))));
+			statData.add(new Attribute("",
+					names.get(i),
+					String.valueOf(data.min(names.get(i))),
+					String.valueOf(data.max(names.get(i))),
+					modes,
+					String.valueOf(data.median(names.get(i))),
+					String.valueOf(data.mean(names.get(i)))));
 		}
 
 		name.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
@@ -140,8 +182,8 @@ public class DashbordController implements Initializable {
 		max.setCellValueFactory(cellData -> cellData.getValue().maxProperty());
 		mode.setCellValueFactory(cellData -> cellData.getValue().modeProperty());
 		mediane.setCellValueFactory(cellData -> cellData.getValue().medianeProperty());
+		mean.setCellValueFactory(cellData -> cellData.getValue().meanProperty());
 		table2.setItems(statData);
-
 	}
 
 	@FXML
@@ -153,7 +195,9 @@ public class DashbordController implements Initializable {
 		try {
 			roote = loader.load();
 			AboutController control = loader.getController();
+			control.setPath(PATH);
 			Scene scene = new Scene(roote);
+			scene.getStylesheets().add("/FXML/Dashbord.css");
 			rootStage.setScene(scene);
 		    rootStage.show();
 		    rootStage.setResizable(false);
@@ -174,8 +218,10 @@ public class DashbordController implements Initializable {
 		Parent roote;
 		try {
 			roote = loader.load();
-			StaticController control = loader.getController();
 			Scene scene = new Scene(roote);
+			StaticController control = loader.getController();
+			control.setPath(PATH);
+			scene.getStylesheets().add("/FXML/Dashbord.css");
 			rootStage.setScene(scene);
 		    rootStage.show();
 		    rootStage.setResizable(false);
@@ -187,5 +233,7 @@ public class DashbordController implements Initializable {
 			e.printStackTrace();
 		}
 	}
+
+
 
 }

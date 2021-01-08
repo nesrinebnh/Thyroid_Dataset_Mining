@@ -17,7 +17,7 @@
          <children>
             <TextField id="title" fx:id="title" layoutX="44.0" layoutY="10.0" stylesheets="@Dashbord.css" text="TechGirls" />
             <Button fx:id="dashbord" layoutX="809.0" layoutY="7.0" mnemonicParsing="false" onAction="#dashbordAction" text="Dashbord" textFill="WHITE" />
-            <Button fx:id="statistic" layoutX="951.0" layoutY="7.0" mnemonicParsing="false" text="Statistics" textFill="WHITE" />
+            <Button fx:id="statistic" layoutX="951.0" layoutY="7.0" mnemonicParsing="false" onAction="#staticAction" text="Statistics" textFill="WHITE" />
             <Button fx:id="about" layoutX="1082.0" layoutY="7.0" mnemonicParsing="false" text="About" textFill="WHITE" />
          </children>
       </Pane>

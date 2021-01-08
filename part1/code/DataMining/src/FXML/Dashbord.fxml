@@ -14,19 +14,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="600.0" minWidth="1200.0" style="-fx-background-color: #eaf1f2;" stylesheets="@Dashbord.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashbordController">
+<AnchorPane minHeight="600.0" minWidth="1200.0" style="-fx-background-color: #eaf1f2;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashbordController">
    <children>
       <Pane layoutX="-8.0" prefHeight="48.0" prefWidth="1208.0" style="-fx-background-color: #2f404d;">
          <children>
-            <TextField id="title" fx:id="title" layoutX="44.0" layoutY="10.0" stylesheets="@Dashbord.css" text="TechGirls" />
+            <TextField id="title" fx:id="title" layoutX="44.0" layoutY="10.0" text="TechGirls" />
             <Button fx:id="dashbord" layoutX="809.0" layoutY="7.0" mnemonicParsing="false" text="Dashbord" textFill="WHITE" />
             <Button fx:id="statistic" layoutX="951.0" layoutY="7.0" mnemonicParsing="false" onAction="#statAction" text="Statistics" textFill="WHITE" />
             <Button fx:id="about" layoutX="1082.0" layoutY="7.0" mnemonicParsing="false" onAction="#aboutAction" text="About" textFill="WHITE" />
          </children></Pane>
       <Text layoutX="331.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Pane id="box" layoutX="53.0" layoutY="80.0" prefHeight="206.0" prefWidth="335.0" stylesheets="@Dashbord.css">
+      <Pane id="box" layoutX="53.0" layoutY="80.0" prefHeight="206.0" prefWidth="242.0">
          <children>
-            <GridPane layoutX="24.0" layoutY="21.0" prefHeight="145.0" prefWidth="298.0">
+            <GridPane layoutX="24.0" layoutY="21.0" prefHeight="145.0" prefWidth="201.0">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
@@ -62,7 +62,7 @@
                </children>
             </GridPane>
          </children></Pane>
-      <Pane id="box" layoutX="54.0" layoutY="300.0" prefHeight="280.0" prefWidth="335.0" stylesheets="@Dashbord.css">
+      <Pane id="box" layoutX="54.0" layoutY="300.0" prefHeight="280.0" prefWidth="335.0">
          <children>
             <GridPane layoutX="24.0" layoutY="19.0" prefHeight="245.0" prefWidth="298.0">
                <columnConstraints>
@@ -107,7 +107,7 @@
             </GridPane>
          </children>
       </Pane>
-      <Pane id="box" layoutX="409.0" layoutY="301.0" prefHeight="280.0" prefWidth="760.0" stylesheets="@Dashbord.css">
+      <Pane id="box" layoutX="409.0" layoutY="301.0" prefHeight="280.0" prefWidth="760.0">
          <children>
             <TableView fx:id="table" layoutX="14.0" layoutY="50.0" prefHeight="218.0" prefWidth="455.0">
               <columns>
@@ -132,15 +132,16 @@
             </Text>
          </children>
       </Pane>
-      <Pane id="box" layoutX="409.0" layoutY="80.0" prefHeight="206.0" prefWidth="412.0" stylesheets="@Dashbord.css">
+      <Pane id="box" layoutX="319.0" layoutY="80.0" prefHeight="206.0" prefWidth="502.0">
          <children>
-            <TableView fx:id="table2" layoutX="21.0" layoutY="40.0" prefHeight="154.0" prefWidth="378.0">
+            <TableView fx:id="table2" layoutX="21.0" layoutY="40.0" prefHeight="154.0" prefWidth="453.0">
                <columns>
                   <TableColumn id="tablecell" fx:id="name" prefWidth="75.0" text="Attibute" />
                   <TableColumn fx:id="min" prefWidth="75.0" text="min" />
                   <TableColumn fx:id="max" prefWidth="75.0" text="max" />
                   <TableColumn fx:id="mode" prefWidth="75.0" text="mode" />
                   <TableColumn fx:id="mediane" prefWidth="75.0" text="mediane" />
+                  <TableColumn fx:id="mean" prefWidth="75.0" text="mean" />
                </columns>
             </TableView>
             <Text layoutX="156.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Global values">
@@ -150,7 +151,7 @@
             </Text>
          </children>
       </Pane>
-      <Pane id="box" layoutX="834.0" layoutY="80.0" prefHeight="206.0" prefWidth="335.0" stylesheets="@Dashbord.css">
+      <Pane id="box" layoutX="834.0" layoutY="80.0" prefHeight="206.0" prefWidth="335.0">
          <children>
             <GridPane layoutX="24.0" layoutY="21.0" prefHeight="145.0" prefWidth="298.0">
                <columnConstraints>

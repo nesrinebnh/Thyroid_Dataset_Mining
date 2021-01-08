@@ -6,7 +6,7 @@ import javafx.beans.property.StringProperty;
 public class Attribute {
 
 	private StringProperty attr1, attr2, attr3, attr4, attr5, target;
-	private StringProperty name, min, max, mode, mediane;
+	private StringProperty name, min, max, mode, mediane, mean;
 	private String id;
 
 	public Attribute(){}
@@ -20,12 +20,13 @@ public class Attribute {
 		this.target = new SimpleStringProperty(target);
 	}
 
-	public Attribute(String name, String min,String max, String mode, String mediane){
+	public Attribute(String id,String name, String min,String max, String mode, String mediane, String mean){
 		this.name = new SimpleStringProperty(name);
 		this.min = new SimpleStringProperty(min);
 		this.max = new SimpleStringProperty(max);
 		this.mode = new SimpleStringProperty(mode);
 		this.mediane = new SimpleStringProperty(mediane);
+		this.mean = new SimpleStringProperty(mean);
 	}
 
 	public String getattr1() {
@@ -136,6 +137,16 @@ public class Attribute {
     }
     public StringProperty medianeProperty() {
         return mediane;
+    }
+
+    public String getmean() {
+        return mean.get();
+    }
+    public void setmean(String CIN) {
+        this.mean.set(CIN);
+    }
+    public StringProperty meanProperty() {
+        return mean;
     }
 
     public String getId() {

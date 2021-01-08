@@ -15,11 +15,11 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
             // Load root layout from fxml file.
-			Parent root = FXMLLoader.load(getClass().getResource("/FXML/Dashbord.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/FXML/test.fxml"));
             Scene scene = new Scene(root);
 			//scene.getStylesheets().add(getClass().getResource("/Font/Dashbord.css").toExternalForm());
 
-            scene.getStylesheets().add("/Font/Dashbord.css");
+            scene.getStylesheets().add("/FXML/Dashbord.css");
             primaryStage.setScene(scene);
             primaryStage.show();
             primaryStage.setResizable(false);

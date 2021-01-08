@@ -27,6 +27,11 @@ public class AboutController implements Initializable {
     @FXML
     private Button about;
 
+    String PATH = "";
+
+    public void setPath(String path){
+    	this.PATH = path;
+    }
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -43,7 +48,33 @@ public class AboutController implements Initializable {
 		try {
 			roote = loader.load();
 			DashbordController control = loader.getController();
+			control.setPath(PATH);
 			Scene scene = new Scene(roote);
+			scene.getStylesheets().add("/FXML/Dashbord.css");
+			rootStage.setScene(scene);
+		    rootStage.show();
+		    rootStage.setResizable(false);
+		    dashbord.getScene().getWindow().hide();
+
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	public void staticAction(){
+		Stage rootStage = new Stage();
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(this.getClass().getResource("/FXML/static.fxml"));
+		Parent roote;
+		try {
+			roote = loader.load();
+			StaticController control = loader.getController();
+			control.setPath(PATH);
+			Scene scene = new Scene(roote);
+			scene.getStylesheets().add("/FXML/Dashbord.css");
 			rootStage.setScene(scene);
 		    rootStage.show();
 		    rootStage.setResizable(false);
