@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="600.0" minWidth="1200.0" style="-fx-background-color: #eaf1f2;" stylesheets="@Dashbord.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AboutController">
+   <children>
+      <Pane layoutX="-8.0" prefHeight="48.0" prefWidth="1208.0" style="-fx-background-color: #2f404d;">
+         <children>
+            <TextField id="title" fx:id="title" editable="false" layoutX="44.0" layoutY="10.0" stylesheets="@Dashbord.css" text="TechGirls" />
+            <Button fx:id="dashbord" layoutX="425.0" layoutY="7.0" mnemonicParsing="false" onAction="#dashbordAction" text="Dashbord" textFill="WHITE" />
+            <Button fx:id="statistic" layoutX="589.0" layoutY="7.0" mnemonicParsing="false" onAction="#staticAction" text="Statistics" textFill="WHITE" />
+            <Button fx:id="about" layoutX="1082.0" layoutY="7.0" mnemonicParsing="false" text="About" textFill="WHITE" />
+            <Button fx:id="pattern" layoutX="743.0" layoutY="7.0" mnemonicParsing="false" onAction="#patternAction" text="Frequent pattern" textFill="WHITE" />
+            <Button fx:id="mining" layoutX="955.0" layoutY="7.0" mnemonicParsing="false" onAction="#miningAction" text="Mining" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Text layoutX="331.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Pane id="box" layoutX="198.0" layoutY="86.0" prefHeight="432.0" prefWidth="804.0" stylesheets="@Dashbord.css">
+         <children>
+            <GridPane layoutX="22.0" layoutY="15.0" prefHeight="397.0" prefWidth="761.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="347.0" minHeight="10.0" prefHeight="344.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField id="title2" fx:id="title1" alignment="CENTER" prefHeight="29.0" prefWidth="189.0" stylesheets="@Dashbord.css" text="Thyroid gland data" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <GridPane prefHeight="261.0" prefWidth="362.0" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane prefHeight="284.0" prefWidth="230.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="155.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="294.0" minHeight="10.0" prefHeight="290.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sources">
+                                 <font>
+                                    <Font name="Rockwell" size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextArea prefHeight="155.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" text="(a) Original owner   Danny Coomans, Dept. of Maths. and Stats., James Cook University,   Townsville 4811, Australia.  email: madhc@manta.jcu.edu.au   &#10;&#10;(b) Donor of databaseStefan Aeberhard, Dept. of Comp. Science, James Cook University,        Townsville 4811, Australia.  email: stefan@coral.cs.jcu.edu.au   &#10;&#10;(c) Date received July, 1992" wrapText="true" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <GridPane prefHeight="324.0" prefWidth="417.0" GridPane.columnIndex="1">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="155.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="291.0" minHeight="10.0" prefHeight="279.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Past usage">
+                                 <font>
+                                    <Font name="Rockwell" size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextArea prefHeight="155.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" text="     (a) Coomans, D., Broeckaert, M. Jonckheer M. and Massart D.L.,&#10;       &quot;Comparison of Multivariate Discriminant Techniques for &#10;&#9;Clinical Data - Application to the Thyroid Functional State&quot;,&#10;&#9;Meth. Inform. Med. 22 (1983) pp. 93-101.&#10;&#10;     (b) The data was used for comparing 16 different discriminant&#10;&#9;techniques, each trying to predict the state of the &#10;&#9;thyroid gland.&#10;&#10;   - (a) Coomans, D. and I. Broeckaert, &quot;Potential Pattern Recognition&#10;&#9;in Cemical and Medical Decision Making&quot;, Research Studies &#10;        Press, Letchworth, England.&#10;&#10;     (b) Uses the data to compare different different kernel density &#10;&#9;methods. Some achieve 100% correct classification." wrapText="true" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
